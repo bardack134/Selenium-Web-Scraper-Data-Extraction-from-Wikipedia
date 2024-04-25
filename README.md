@@ -3,7 +3,7 @@ Python script utilizes Selenium to perform web scraping on Wikipedia's main page
 
 **Note:**
 
-*This script is just a basic example of using Selenium* for web scraping and may require modifications to fit other use cases or different web pages. Be sure to respect the terms of service of any website you're scraping from, and keep in mind that ethical web scraping is important for maintaining the integrity of the Internet.
+**This script is just a basic example of using Selenium** for web scraping and may require modifications to fit other use cases or different web pages. Be sure to respect the terms of service of any website you're scraping from, and keep in mind that ethical web scraping is important for maintaining the integrity of the Internet.
 
 
 **Code Description**
