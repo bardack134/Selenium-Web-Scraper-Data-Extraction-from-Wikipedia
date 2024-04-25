@@ -7,11 +7,13 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-
+# import KEYS
+from selenium.webdriver.common.keys import Keys
 
 
 # Mantener el navegador abierto después de que el script ha sido ejecutado
 chrome_options = Options()
+chrome_options.add_argument("--start-maximized")
 chrome_options.add_experimental_option("detach", True)
 
 
@@ -27,24 +29,41 @@ try:
     # Obtener página web
     driver.get("https://en.wikipedia.org/wiki/Main_Page")
 
-    sleep(10)  # Esperar 10 segundos para que la página cargue completamente
-    
-    # Iterar sobre los primeros 5 elementos de la lista de eventos
+    sleep(5)  # Esperar x segundos para que la página cargue completamente
+
     
         
-        # Encontrar el año del evento utilizando XPath
-    number = driver.find_element(By.XPATH, value=f'//*[@id="articlecount"]/a[1]')
+    # Encontrar el anumero de articulos usando XPath
+    # number = driver.find_element(By.XPATH, value=f'//*[@id="articlecount"]/a[1]')
+    number = driver.find_element(By.CSS_SELECTOR, value='#articlecount a')
         
        
+    #hacemos click en el elemento encontradu
+    # number.click()
+    
+    
+    #encontrar link lement usando find_element_by_link
+    content_portals=driver.find_element(By.LINK_TEXT, 'Content portals')
         
+        
+    # content_portals.click()
+    
+     
+    #encontrando el elemento input 'search'
+    search_input=driver.find_element(By.NAME, value='search') 
+    search_input.send_keys("Sapporo", Keys.ENTER) 
+    
         
 except Exception as err:
     print(f"El elemento no fue encontrado: {err}")  # Imprimir un mensaje de error si ocurre una excepción
+
 
 else:
     # Imprimir el diccionario de eventos
     print(number.text)
     
+      
 finally:
     # Cerrar el navegador
-    driver.quit()
+    # driver.quit()
+    pass
