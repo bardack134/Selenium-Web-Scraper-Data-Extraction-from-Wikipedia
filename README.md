@@ -11,6 +11,7 @@ Python script utilizes Selenium to perform web scraping on Wikipedia's main page
 
 
 **Code Description**
+
 -The script opens Wikipedia's main page.
 -It uses Selenium to find the number of articles on the page and click on a specific link ("Content portals").
 -It also performs a search in Wikipedia's search bar using the word "Sapporo".
